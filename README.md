@@ -10,7 +10,7 @@
 
 This application requires Express.js, Sequelize, MySQL WorkBench, and Insomnia. All dependencies are included in the package.json at the root directory. To run this program, make sure that all dependencies are installed on your local machine and use npm start to run the program. You can view a walk through of this video [here](https://www.youtube.com/watch?v=3A5UXl927II).
 
-e-commerce.gif![e-commerce](https://user-images.githubusercontent.com/54730132/124368208-b8adc600-dc2c-11eb-9d82-a30e1458f900.gif)
+![e-commerce](https://user-images.githubusercontent.com/54730132/124368208-b8adc600-dc2c-11eb-9d82-a30e1458f900.gif)
 
 
 <img width="2221" alt="e-commerce insomnia" src="https://user-images.githubusercontent.com/54730132/124367942-02e17800-dc2a-11eb-8e02-aa5be124d936.png">
