@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
       },
     ],
   })
-    .then((dbCategoryData) => res.json(dbCategoryData))
+    .then((tagData) => res.json(tagData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -35,12 +35,12 @@ router.get("/:id", (req, res) => {
       },
     ],
   })
-    .then((dbCategoryData) => {
-      if (!dbCategoryData) {
+    .then((tagData) => {
+      if (!tagData) {
         res.status(404).json({ message: 'No tag with that Id found"' });
         return;
       }
-      res.json(dbCategoryData);
+      res.json(tagData);
     })
     .catch((err) => {
       console.log(err);
@@ -51,9 +51,9 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   // create a new tag
   Tag.create({
-    category_name: req.body.category_name,
+    tag_name: req.body.tag_name,
   })
-    .then((dbCategoryData) => res.json(dbCategoryData))
+    .then((tagData) => res.json(tagData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -62,17 +62,17 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   // update a tag's name by its `id` value
-  Tag.update({
+  Tag.update(req.body, {
     where: {
       id: req.params.id,
     },
   })
-    .then((dbCategoryData) => {
-      if (!dbCategoryData) {
+    .then((tagData) => {
+      if (!tagData) {
         res.status(404).json({ message: 'Id not found"' });
         return;
       }
-      res.json(dbCategoryData);
+      res.json(tagData);
     })
     .catch((err) => {
       console.log(err);
@@ -87,12 +87,12 @@ router.delete("/:id", (req, res) => {
       id: req.params.id,
     },
   })
-    .then((dbCategoryData) => {
-      if (!dbCategoryData) {
+    .then((tagData) => {
+      if (!tagData) {
         res.status(404).json({ message: 'Id not found"' });
         return;
       }
-      res.json(dbCategoryData);
+      res.json(tagData);
     })
     .catch((err) => {
       console.log(err);
